@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
+git config --global alias.branchd '!git fetch && git branch --merged | grep -v "\*\|master" | xargs git branch -d'
 git config --global alias.current 'rev-parse --abbrev-ref HEAD'
 git config --global alias.cmod 'update-index --chmod=+x'
 git config --global alias.diffall '!git diff --staged && git diff'
